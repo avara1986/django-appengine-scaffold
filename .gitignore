@@ -1,0 +1,90 @@
+# --- EVENTS ----
+vapp
+settings_local.py
+/static
+db.sqlite3
+media
+sitepackages
+libs
+*.pyc
+.tox
+.tox/*
+.coverage
+.coverage.*
+htmlcov/
+uploads
+Google_Activa_tu_ciudad.egg-info
+Django_Events.egg-info
+
+# -- Composer -----------------------------------------
+composer.phar
+
+# -- PHPUnit ------------------------------------------
+app/phpunit.xml
+
+# -- Editores -----------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.buildpath
+
+# phpstorm
+.idea/
+
+# textmate
+*.tmproj
+*.tmproject
+tmtags
+
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+
+# netbeans
+nbproject/private/
+build/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# -- Sistemas Operativos ------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+!.gitignore
+!.htaccess
+*~
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes

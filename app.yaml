@@ -1,0 +1,66 @@
+# This file specifies your Python application's runtime configuration
+# including URL routing, versions, static file uploads, etc. See
+# https://developers.google.com/appengine/docs/python/config/appconfig
+# for details.
+application: [PROJECT]
+version: 0-01
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: django
+  version: 1.5
+- name: MySQLdb
+  version: "latest"
+- name: PIL
+  version: "latest"
+- name: ssl
+  version: "latest"
+  
+# Builtins provide handlers for common application functions. See
+# https://developers.google.com/appengine/docs/python/config/appconfig#Python_app_yaml_Builtin_handlers
+# for a list of other builtins.
+# TODO: List any other builtins that you wish to use.
+builtins:
+- django_wsgi: on
+
+env_variables:
+
+handlers:
+- url: /static
+  static_dir: static
+  expiration: '0'
+- url: /cron/.*
+  script: activatuciudad.wsgi.application
+  login: admin
+- url: /admin/.*
+  script: activatuciudad.wsgi.application
+  login: admin
+- url: /.*
+  script: activatuciudad.wsgi.application
+  secure: always
+
+skip_files:
+    - manage.py
+    - README.md
+    - install_deps
+    - requirements.txt
+    - sitepackages/google_appengine*
+#    - sitepackages/django/*
+    - sitepackages/MySQLdb*
+    - sitepackages/PIL*
+    - sitepackages/pip*
+    - sitepackages/selenium*
+    - htmlcov* 
+    - \.storage.*
+    - (.*)\.egg-info
+    - (.*)\.pyc
+    - \.tox.*
+    - \.git.*
+    - \.settings.*
+    - ^(.*/)?#.*#$
+    - ^(.*/)?.*~$
+    - ^(.*/)?.*\.py[co]$
+    - ^(.*/)?.*/RCS/.*$
+    - ^(.*/)?\..*$
