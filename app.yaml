@@ -26,19 +26,21 @@ builtins:
 - django_wsgi: on
 
 env_variables:
+  DJANGO_SETTINGS_MODULE: 'settings.settings_local'
+# DATABASE_URL: 
 
 handlers:
 - url: /static
   static_dir: static
   expiration: '0'
 - url: /cron/.*
-  script: activatuciudad.wsgi.application
+  script: app.wsgi.application
   login: admin
 - url: /admin/.*
-  script: activatuciudad.wsgi.application
+  script: app.wsgi.application
   login: admin
 - url: /.*
-  script: activatuciudad.wsgi.application
+  script: app.wsgi.application
   secure: always
 
 skip_files:
